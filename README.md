@@ -37,6 +37,49 @@ Infrastructre testing is done by provisioning development infrastructure through
 ## CI/CD
 Jenkins can be used to run CI pipeline for IAC and configuration (all commands available in MAKE file) while spinnaker can be used to continously deploy the changes.
 
+### Jenkins Example
+```
+pipeline {
+  agent { label 'linux'}
+  options {
+    skipDefaultCheckout(true)
+  }
+  stages{
+    stage('clean workspace') {
+      steps {
+        cleanWs()
+      }
+    }
+    stage('checkout') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('terraform-init') {
+      steps {
+        sh 'make terraform-init'
+      }
+    }
+    stage('terraform-plan') {
+      steps {
+        sh 'make terraform-plan'
+      }
+    }
+    stage('terraform-apply') {
+      steps {
+        sh 'make terraform-apply'
+      }
+    }
+  }
+  post {
+    always {
+      cleanWs()
+    }
+  }
+}
+```
+
 ## References:
 https://github.com/terraform-aws-modules/terraform-aws-eks
 https://microservices-demo.github.io/
+https://www.cloudbees.com/blog/terraform-and-jenkins-iac-from-your-build

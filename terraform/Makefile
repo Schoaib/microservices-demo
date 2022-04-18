@@ -60,39 +60,3 @@ conftest-plan:
 # Clear the terraform temporary files
 clean:
 	rm -rf terraform*
-
-# kustomzie install
-kustomize-install: kustomize-clean
-	@cd ${KUSTOMIZE_SPINNAKER_FOLDER} && \
-	curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash -s -- ${KUSTOMIZE_VERSION}
-
-# kustomize clean:
-kustomize-clean:
-	@cd ${KUSTOMIZE_SPINNAKER_FOLDER} && \
-	rm -f kustomize
-
-# kustomize-build
-kustomize-build: kustomize-install
-	@cd ${KUSTOMIZE_SPINNAKER_FOLDER} && \
-	./kustomize build .
-
-# kustomize-apply
-kustomize-apply:
-	@cd ${KUSTOMIZE_SPINNAKER_FOLDER} && \
-	./kustomize build . | kubectl apply -f -
-
-# kustomize-delete
-kustomize-delete:
-	@cd ${KUSTOMIZE_SPINNAKER_FOLDER} && \
-	./kustomize build . | kubectl delete -f-
-
-# kustomize-plan
-kustomize-plan:
-	@cd ${KUSTOMIZE_SPINNAKER_FOLDER} && \
-	./kustomize build . | kubectl diff -f-
-
-
-# kustomize-upgrade:
-kustomize-upgrade:
-	@curl https://codeload.github.com/armory/spinnaker-kustomize-patches/zip/master -o spin-kustomize.zip && \
-	unzip -d spinnaker-kustomize-patches -uj spin-kustomize.zip && rm spin-kustomize.zip
