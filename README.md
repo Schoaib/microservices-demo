@@ -35,7 +35,7 @@ Infrastructre testing is done by provisioning development infrastructure through
 - Jaeger (https://github.com/Schoaib/microservices-demo/tree/main/kubernetes/manifests-jaeger)
 
 ## CI/CD
-Jenkins can be used to run CI pipeline for IAC and configuration (all commands available in MAKE file) while spinnaker can be used to continously deploy the changes.
+Jenkins can be used to run CI pipeline for IAC and configuration (all commands available in MAKE file) while spinnaker can be used to continously deploy the changes (https://spinnaker.io/docs/guides/tutorials/codelabs/kubernetes-v2-source-to-prod/).
 
 ### Jenkins Example
 ```
@@ -79,7 +79,12 @@ pipeline {
 }
 ```
 
+### Spinnaker Example
+![alt text](https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2019/07/02/prabhat-spinnaker-8.7.1-pipeline.png)
+
+
 ## References:
 https://github.com/terraform-aws-modules/terraform-aws-eks
 https://microservices-demo.github.io/
 https://www.cloudbees.com/blog/terraform-and-jenkins-iac-from-your-build
+https://aws.amazon.com/blogs/opensource/deployment-pipeline-spinnaker-kubernetes/
