@@ -21,6 +21,19 @@ The [kubernetes folder](./kubernetes/) contains scripts and instructions to prov
 ### Integration Testing
 Infrastructre testing is done by provisioning development infrastructure through PR.
 
+### Load Testing
+- Using python to create load on the system .(https://github.com/Schoaib/microservices-demo/tree/main/kubernetes/manifests-loadtest)
+
+## Observability
+
+### Logging
+- EFK Stack (https://github.com/Schoaib/microservices-demo/tree/main/kubernetes/manifests-logging)
+- Cloudwatch
+### Monitoring & Alerting
+- Prometheus & Grafana (https://github.com/Schoaib/microservices-demo/tree/main/kubernetes/manifests-monitoring)
+### Tracing 
+- Jaeger (https://github.com/Schoaib/microservices-demo/tree/main/kubernetes/manifests-jaeger)
+
 ## CI/CD
 Jenkins can be used to run CI pipeline for IAC and configuration (all commands available in MAKE file) while spinnaker can be used to continously deploy the changes.
 
