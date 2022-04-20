@@ -19,7 +19,7 @@ The [kubernetes folder](./kubernetes/) contains scripts and instructions to prov
 - [Conftest for Kubernetes] (https://www.conftest.dev/) using rego policies (https://github.com/open-policy-agent/conftest/tree/master/examples/kubernetes)
 
 ### Integration Testing
-Infrastructre testing is done by provisioning development infrastructure through PR.
+Infrastructre testing is done by provisioning development infrastructure through PRm and running tests using terratest (https://terratest.gruntwork.io/).
 
 ### Load Testing
 - Using python to create load on the system .(https://github.com/Schoaib/microservices-demo/tree/main/kubernetes/manifests-loadtest)
