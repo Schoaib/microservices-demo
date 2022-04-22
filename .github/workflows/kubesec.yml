@@ -32,7 +32,7 @@ jobs:
           input: kubernetes/complete-demo.yaml # specify configuration file to scan here
           format: template
           template: template/sarif.tpl
-          sarif_file: kubesec-results.sarif
+          output: kubesec-results.sarif
           exit-code: "0"
 
       - name: Upload Kubesec scan results to GitHub Security tab
