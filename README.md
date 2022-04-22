@@ -82,6 +82,13 @@ pipeline {
 ### Spinnaker Example
 ![alt text](https://d2908q01vomqb2.cloudfront.net/ca3512f4dfa95a03169c5a670a4c91a19b3077b4/2019/07/02/prabhat-spinnaker-8.7.1-pipeline.png)
 
+### Github Example
+- Kubernetes countinous security scanning using kubesec https://github.com/Schoaib/microservices-demo/blob/main/.github/workflows/kubesec.yml
+- Terraform  security scanning using tfsec https://github.com/Schoaib/microservices-demo/blob/main/.github/workflows/tfsec.yml
+
+Scan reports here 
+https://github.com/Schoaib/microservices-demo/security/code-scanning
+
 
 ## References:
 https://github.com/terraform-aws-modules/terraform-aws-eks
